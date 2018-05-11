@@ -1,8 +1,7 @@
-<h1>Name: <%=@post.first_name%></h1>
-<p>Email: <%=@post.email%></p>
-<p>Age: <%=@post.age%></p>
+<h1>Group <%=@group.group_letter%>:</h1>
+<p><%= @group.team_1 %> <%= @group.team_2 %> <%= @group.team_3 %> <%= @group.team_4 %></p>
 
-<form class="" action="/<%= @post.id %>" method="post">
+<form class="" action="/<%= @group.id %>" method="post">
   <input type="hidden" name="_method" value="delete">
   <input type="submit" value="Delete">
 </form>

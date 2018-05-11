@@ -2,9 +2,9 @@ require "sinatra"
 require "sinatra/reloader" if development?
 require "pg"
 
-require_relative "controllers/posts_controller.rb"
-require_relative "models/post.rb"
+require_relative "controllers/world_cup_controller.rb"
+require_relative "models/group.rb"
 
 use Rack::MethodOverride
 
-run PostsController
+run WorldCupController

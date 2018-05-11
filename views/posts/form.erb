@@ -1,19 +1,22 @@
-<form class="" action="/<%= @post.id %>" method="post">
-  First Name:<br>
-  <input type="text" name="first_name" placeholder="First Name...." value="<%= @post.first_name %>">
+<form class="" action="/<%= @group.id %>" method="post">
+  Group:<br>
+  <input type="text" name="group_letter" placeholder="Group...." value="<%= @group.group_letter %>">
   <br><br>
-  Last Name:<br>
-  <input type="text" name="last_name" placeholder="Last Name...." value="<%= @post.last_name %>">
+  Team 1:<br>
+  <input type="text" name="team_1" placeholder="Team 1" value="<%= @group.team_1 %>">
   <br><br>
-  Email:<br>
-  <input type="text" name="email" placeholder="Email...." value="<%= @post.email %>">
+  Team 2:<br>
+  <input type="text" name="team_2" placeholder="Team 2" value="<%= @group.team_2 %>">
   <br><br>
-  Age:<br>
-  <input type="text" name="age" placeholder="Age...." value="<%= @post.age %>">
+  Team 3:<br>
+  <input type="text" name="team_3" placeholder="Team 3" value="<%= @group.team_3 %>">
+  <br><br>
+  Team 4:<br>
+  <input type="text" name="team_4" placeholder="Team 4" value="<%= @group.team_4 %>">
   <br><br>
   <input type="submit" name="" value="Submit">
 
-  <% if(@post.id) %>
+  <% if(@group.id) %>
     <input type="hidden" name="_method" value="PUT">
   <% end %>
 
