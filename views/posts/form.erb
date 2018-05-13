@@ -1,0 +1,66 @@
+<form class="text-center" action="/<%= @group.id %>" method="post">
+
+  <div class="container form-group">
+
+    <div class="row text-center">
+      <div class="col-md-2 col-md-offset-3">
+        <h4>Group:</h4>
+      </div>
+      <div class="col-md-4">
+        <input class="form-control" type="text" name="group_letter" placeholder="Group...." value="<%= @group.group_letter %>">
+      </div>
+    </div>
+
+    <div class="row text-center">
+      <div class="col-md-2 col-md-offset-3">
+        <h4>Team 1:</h4>
+      </div>
+
+      <div class="col-md-4">
+        <input class="form-control" type="text" name="team_1" placeholder="Team 1" value="<%= @group.team_1 %>">
+      </div>
+    </div>
+
+    <div class="row text-center">
+      <div class="col-md-2 col-md-offset-3">
+        <h4>Team 2:</h4>
+      </div>
+
+      <div class="col-md-4">
+        <input class="form-control" type="text" name="team_2" placeholder="Team 2" value="<%= @group.team_2 %>">
+      </div>
+    </div>
+
+    <div class="row text-center">
+      <div class="col-md-2 col-md-offset-3">
+        <h4>Team 3:</h4>
+      </div>
+
+      <div class="col-md-4">
+        <input class="form-control" type="text" name="team_3" placeholder="Team 3" value="<%= @group.team_3 %>">
+      </div>
+    </div>
+
+    <div class="row text-center">
+      <div class="col-md-2 col-md-offset-3">
+        <h4>Team 4:</h4>
+      </div>
+
+      <div class="col-md-4">
+        <input class="form-control" type="text" name="team_4" placeholder="Team 4" value="<%= @group.team_4 %>">
+      </div>
+    </div>
+
+  </div>
+
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <input type="submit" class="btn btn-primary btn-block" value="Submit">
+    </div>
+  </div>
+
+  <% if(@group.id) %>
+    <input type="hidden" name="_method" value="PUT">
+  <% end %>
+
+</form>

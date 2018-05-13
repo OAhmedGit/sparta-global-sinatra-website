@@ -1,0 +1,53 @@
+<div class="container">
+
+  <div class="row form-group">
+    <div class="col-md-12 text-center">
+      <h1>Welcome to the index page</h1>
+    </div>
+  </div>
+
+  <hr>
+
+  <% @groups.each do |group| %>
+    <div class="row form-group">
+      <div class="col-md-12 text-center">
+        <h3>Group <%= group.group_letter%>:</h3>
+      </div>
+    </div>
+
+    <div class="row text-center form-group">
+      <div class="col-md-3">
+        <div class="panel panel-default">
+          <div class="panel-body"><%= group.team_1 %></div>
+        </div>
+        <img src="<%=group.team_1_flag%>" alt="">
+      </div>
+
+      <div class="col-md-3">
+        <div class="panel panel-default">
+          <div class="panel-body"><%= group.team_2 %></div>
+        </div>
+        <img src="<%=group.team_2_flag%>" alt="">
+      </div>
+
+      <div class="col-md-3">
+        <div class="panel panel-default">
+          <div class="panel-body"><%= group.team_3 %></div>
+        </div>
+        <img src="<%=group.team_3_flag%>" alt="">
+      </div>
+
+      <div class="col-md-3">
+        <div class="panel panel-default">
+          <div class="panel-body"><%= group.team_4 %></div>
+        </div>
+        <img src="<%=group.team_4_flag%>" alt="">
+      </div>
+
+    </div>
+
+    <hr>
+
+  <% end %>
+
+</div>
