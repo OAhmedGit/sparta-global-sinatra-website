@@ -12,6 +12,7 @@ class WorldCupController < Sinatra::Base
 
     #index page
     get "/" do
+
       @title = "World Cup Groups"
       @groups = Group.all
 
@@ -49,6 +50,10 @@ class WorldCupController < Sinatra::Base
       post.team_2 = params[:team_2]
       post.team_3 = params[:team_3]
       post.team_4 = params[:team_4]
+      post.team_1_flag = params[:team_1_flag]
+      post.team_2_flag = params[:team_2_flag]
+      post.team_3_flag = params[:team_3_flag]
+      post.team_4_flag = params[:team_4_flag]
 
       post.save
 
@@ -75,6 +80,10 @@ class WorldCupController < Sinatra::Base
         post.team_2 = params[:team_2]
         post.team_3 = params[:team_3]
         post.team_4 = params[:team_4]
+        post.team_1_flag = params[:team_1_flag]
+        post.team_2_flag = params[:team_2_flag]
+        post.team_3_flag = params[:team_3_flag]
+        post.team_4_flag = params[:team_4_flag]
 
         post.save
 

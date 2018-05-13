@@ -1,5 +1,5 @@
 class Group
-  attr_accessor :id, :group_letter, :team_1, :team_2, :team_3, :team_4
+  attr_accessor :id, :group_letter, :team_1, :team_2, :team_3, :team_4, :team_1_flag, :team_2_flag, :team_3_flag, :team_4_flag
 
   def self.open_connection
     return conn = PG.connect(dbname: "worldcup")
@@ -25,6 +25,10 @@ class Group
     group_instance.team_2 = post_data["team_2"]
     group_instance.team_3 = post_data["team_3"]
     group_instance.team_4 = post_data["team_4"]
+    group_instance.team_1_flag = post_data["team_1_flag"]
+    group_instance.team_2_flag = post_data["team_2_flag"]
+    group_instance.team_3_flag = post_data["team_3_flag"]
+    group_instance.team_4_flag = post_data["team_4_flag"]
     return group_instance
   end
 
@@ -43,10 +47,10 @@ class Group
   def save
     conn = Group.open_connection
     if(!self.id)
-      sql = "INSERT INTO groups (group_letter, team_1, team_2, team_3, team_4) VALUES ('#{self.group_letter}', '#{self.team_1}', '#{self.team_2}', '#{self.team_3}', '#{self.team_4}')"
+      sql = "INSERT INTO groups (group_letter, team_1, team_2, team_3, team_4, team_1_flag, team_2_flag, team_3_flag, team_4_flag) VALUES ('#{self.group_letter}', '#{self.team_1}', '#{self.team_2}', '#{self.team_3}', '#{self.team_4}', '#{self.team_1_flag}', '#{self.team_2_flag}', '#{self.team_3_flag}', '#{self.team_4_flag}')"
 
     else
-      sql = "UPDATE groups SET group_letter='#{self.group_letter}', team_1='#{self.team_1}', team_2='#{self.team_2}', team_3='#{self.team_3}', team_4='#{self.team_4}' WHERE id=#{self.id}"
+      sql = "UPDATE groups SET group_letter='#{self.group_letter}', team_1='#{self.team_1}', team_2='#{self.team_2}', team_3='#{self.team_3}', team_4='#{self.team_4}', team_1_flag='#{self.team_1_flag}', team_2_flag='#{self.team_2_flag}', team_3_flag='#{self.team_3_flag}', team_4_flag='#{self.team_4_flag}' WHERE id=#{self.id}"
     end
 
     conn.exec(sql)

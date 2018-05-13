@@ -1,15 +1,14 @@
 <!doctype html>
 
 <html>
+  <head>
+      <title> <%=@title%> </title>
+      <link href="/bootstrap.css" rel="stylesheet" type="text/css" />
+      <link href="/style.css" rel="stylesheet" type="text/css" />
+  </head>
 
-    <head>
-        <title> <%=@title%> </title>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
-    </head>
-
-    <body>
-      <%= erb(:"partials/navigation", :layout => false)%>
-      <%= yield %>
-    </body>
-
+  <body>
+    <%= erb(:"partials/navigation", :layout => false)%>
+    <%= yield %>
+  </body>
 </html>
